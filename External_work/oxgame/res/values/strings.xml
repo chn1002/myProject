@@ -1,0 +1,21 @@
+<resources>
+
+    <string name="app_name">oxGame</string>
+    <string name="ok_btn">O</string>
+    <string name="nok_btn">X</string>
+    <string name="device_name">Name</string>
+    <string name="setting">Setting</string>
+    <string name="setting_ip_addr_perf">IP Address</string>
+    <string name="setting_port_perf">Port</string>
+    <string name="setting_name_perf">Name</string>
+    <string name="default_ip_addr_perf">192.168.0.2</string>
+    <string name="default_port_perf">10000</string>
+    <string name="default_name_perf">00</string>
+    <string name="default_device_name">01</string>
+    <string name="device_name_summary">단말 이름 설정</string>
+    <string name="port_number_summary">포트 정보 설정</string>
+    <string name="ip_addr_summary">IP 정보 설정</string>
+    <string name="setting_device_title">Device Name</string>
+    <string name="button_summary">설정 화면으로 이동</string>
+
+</resources>

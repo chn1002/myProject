@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Configuration TestMode="0"><remoteFileDir Maxfilenumber="1" filename="image" filenumber="0">remote</remoteFileDir><localFileDir>local</localFileDir><network><ftp password="password" user="user">ftpaddress</ftp><httpurl>httpurl</httpurl></network></Configuration>

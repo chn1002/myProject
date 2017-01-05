@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">자원 관리</string>
+    <string name="action_settings">설정</string>
+    <string name="btn_pc_power_off">전원 종료</string>
+    <string name="btn_wol">Wake on Lan</string>
+    <string name="str_scan_btn">검색</string>
+    <string name="title_section1">PC 관리</string>
+    <string name="title_section2">WOL 등록</string>
+    <string name="title_section3">WOL 리스트</string>
+    <string name="button_wake">전송</string>
+    <string name="button_save">저장</string>
+    <string name="button_clear">초기화</string>
+    <string name="button_cancel">취소</string>
+    <string name="tab_history">기록</string>
+    <string name="tab_wake">Wake</string>
+    <string name="title_history">기록</string>
+    <string name="title_wake">Wake</string>
+    <string name="title">Reference</string>
+    <string name="mac">맥주소</string>
+    <string name="ip">IP 주소</string>
+    <string name="port">포트</string>
+    <string name="menu_wake">전송</string>
+    <string name="menu_edit">수정</string>
+    <string name="menu_delete">삭제</string>
+    <string name="menu_sortby">Sort By</string>
+    <string name="menu_lastused">Recent</string>
+    <string name="menu_usedcount">Frequent</string>
+    <string name="menu_created">Created</string>
+    <string name="invalid_mac">Invalid MAC Address</string>
+    <string name="send_failed">Sending Failed</string>
+    <string name="packet_sent">Magic Packet sent</string>
+    <string name="shutdown">종료</string>
+
+</resources>

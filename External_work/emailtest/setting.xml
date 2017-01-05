@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="EUC-KR" standalone="no"?>
+<Configuration TestMode="0" port="8888" testEmail="chn1002@nate.com">
+<Email password="isvyexovdoyaoiee" port="465" server="smtp.gmail.com" user="chn1002@gmail.com">C:\log.txt</Email>
+<EmailContent subject="제목">내용</EmailContent>
+</Configuration>

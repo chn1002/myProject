@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="EUC-KR" standalone="no"?>
+<Configuration TestMode="0">
+<Address port="50000">127.0.0.1</Address>
+<Address port="50001">127.0.0.2</Address>
+<command name="play">PLAY</command>
+<command name="replay">REPLAY</command>
+<media type="video">media</media>
+</Configuration>

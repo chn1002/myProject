@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Configuration TestMode="0"><remoteFileDir Maxfilenumber="2" filename="image" filenumber="2">./img/</remoteFileDir><localFileDir>./</localFileDir><network><ftp password="mania1963" user="mania63">mania63.najoy.net</ftp><httpurl>http://mania63.najoy.net/test.php</httpurl></network></Configuration>

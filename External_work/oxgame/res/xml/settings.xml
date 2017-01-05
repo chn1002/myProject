@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orderingFromXml="true"
+    android:title="@string/setting" >
+
+    <EditTextPreference
+        android:defaultValue="@string/default_ip_addr_perf"
+        android:key="ip_address"
+        android:summary="@string/ip_addr_summary"
+        android:title="@string/setting_ip_addr_perf" />
+    <EditTextPreference
+        android:defaultValue="@string/default_port_perf"
+        android:key="port_number"
+        android:summary="@string/port_number_summary"
+        android:title="@string/setting_port_perf" />
+    <EditTextPreference
+        android:defaultValue="@string/default_name_perf"
+        android:key="device_name"
+        android:summary="@string/device_name_summary"
+        android:title="@string/setting_device_title" />
+
+    <Preference
+        android:key="button"
+        android:summary="@string/button_summary"
+        android:title="Setting" />
+
+</PreferenceScreen>

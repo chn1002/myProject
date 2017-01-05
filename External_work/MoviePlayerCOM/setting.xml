@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Configuration TestMode="0" batexec="1" port="50000"><command name="play">PLAY</command><command name="replay" time="60">REPLAY</command><media type="video">media</media></Configuration>
