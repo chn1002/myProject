@@ -1,0 +1,156 @@
+/**
+ * 
+ */
+package com.chn.network;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+import com.chn.remotecommand.grobalConfig;
+
+
+/**
+ * @FileName  : mainClient.java 
+ * @Project   : relayClient 
+ * @Date      : 2013. 3. 26. 
+ * @작성자    : dasan1 
+ * @변경이력  : 
+ * @프로그램설명 : 
+ */
+public class NetworkClient{
+	private Socket mSocket = null;
+	private String mIPAddress = "";
+	private int mPortNumber;
+	private MessageListener mListener;
+	private boolean mReviceMessage;
+	private Thread mReviceThread;
+
+	final String DEFAULT_IPADDRESS = "127.0.0.1";
+	final int DEFAULT_PORT = 50000;
+
+	public NetworkClient(MessageListener listener){
+		mIPAddress = DEFAULT_IPADDRESS;	
+		mPortNumber = DEFAULT_PORT;
+		mListener = listener;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.mIPAddress = ipAddress;
+		this.mPortNumber = DEFAULT_PORT;
+	}
+
+	public void setIpAddress(String ipAddress, int portNumber){
+		this.mIPAddress = ipAddress;
+		this.mPortNumber = portNumber;
+	}
+
+	public boolean socketConnect(){
+		try {
+			mSocket = new Socket(mIPAddress, mPortNumber);
+			mReviceMessage = true;
+			return true;
+		} catch (UnknownHostException error) {
+			error.printStackTrace();
+
+			return false;
+		} catch (IOException error) {
+			error.printStackTrace();
+
+			return false;
+		}
+	}
+
+	public boolean socketClose(){
+		try {
+			if(mReviceThread.isAlive()){
+				mReviceMessage = false;
+			}
+
+			if(mReviceThread.isAlive()){
+				mReviceThread.interrupt();
+			}
+
+			mSocket.close();
+
+			return true;
+		} catch (IOException error) {
+			error.printStackTrace();
+
+			return false;
+		}
+	}
+
+	public void sendMessage(String message){
+		try {
+			BufferedWriter OutMsg = new BufferedWriter(new OutputStreamWriter(mSocket.getOutputStream()));
+			OutMsg.write(message);
+			OutMsg.newLine();
+			OutMsg.flush();
+
+			System.out.println("Output : " + message);
+		} catch (IOException error) {
+			error.printStackTrace();
+		}
+	}
+	
+	public boolean sendPingpong(String command) {
+		boolean isConnection = false;
+		String message = null;
+		
+		try {
+			BufferedWriter OutMsg = new BufferedWriter(new OutputStreamWriter(mSocket.getOutputStream()));
+			BufferedReader InMsg  = new BufferedReader(new InputStreamReader(mSocket.getInputStream()), 1024);;
+			OutMsg.write(command);
+			OutMsg.newLine();
+			OutMsg.flush();
+			
+			String context = InMsg.readLine();
+			
+			if(context != null){
+				message = String.format("%s", context);
+			}
+			
+			if(message.equals(grobalConfig.PONG)){
+				isConnection = true;
+			}
+			mSocket.close();
+
+			System.out.println("Output : " + command);
+		} catch (IOException error) {
+			error.printStackTrace();
+		}
+		
+		return isConnection;
+	}
+
+
+	private void reviceMessage(final BufferedReader InMsg){
+		mReviceThread = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				while(mReviceMessage){
+					try {
+						String inLine = InMsg.readLine();
+						mListener.ReviceMessage(inLine);
+					} catch (IOException error) {
+						error.printStackTrace();
+					}
+
+				}
+			}
+		});
+
+		mReviceThread.start();
+	}
+
+	public void setReviceMessage(boolean ReviceMessage) {
+		this.mReviceMessage = ReviceMessage;
+	}
+
+}

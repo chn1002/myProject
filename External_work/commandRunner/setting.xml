@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="EUC-KR" standalone="no"?>
+<Configuration Mode="server">
+<Commandrunner ID="0">
+<Information port="50000">
+<mousePointX>100</mousePointX>
+<mousePointY>200</mousePointY>
+</Information>
+</Commandrunner>
+</Configuration>

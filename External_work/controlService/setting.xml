@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="EUC-KR" standalone="no"?>
+<Configuration CommandStartTime="100" Mode="server" RepeatTime="0" pingpong="10">
+<RemoteServer ID="0">
+<Address port="50000">127.0.0.1</Address>
+<Command>play</Command>
+<RepeatCommand>play</RepeatCommand>
+<checkCommandRunnerAlive>ENABLE</checkCommandRunnerAlive>
+</RemoteServer>
+</Configuration>
